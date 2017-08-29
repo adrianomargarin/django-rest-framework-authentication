@@ -38,3 +38,40 @@ heroku config:set DEBUG=False
 
 git push heroku master --force
 ```
+
+## Testando:
+
+```python
+POST https://drf-authentication.herokuapp.com/login/
+
+headers:
+  "Content-Type": "application/json"
+
+body:
+  {
+	  "username": "adrianomargarin",
+	  "password": "asdf1234"
+  }
+  
+response:
+  {
+    "token": "token-gerado"
+  }
+```
+
+Com o token gerado, faça o próximo passo:
+
+```python
+GET https://drf-authentication.herokuapp.com/user/
+
+headers:
+  "Content-Type": "application/json"
+  "Authorization": "token-gerado-em-base64"
+
+response:
+  {
+    "username": "adrianomargarin",
+    "first_name": "",
+    "last_name": ""
+  }
+```
