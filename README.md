@@ -66,7 +66,7 @@ GET https://drf-authentication.herokuapp.com/user/
 
 headers:
   "Content-Type": "application/json"
-  "Authorization": "Basic token-gerado-em-base64"
+  "Authorization": "Basic token-gerado-em-base64:"
 
 response:
   {
